@@ -16,7 +16,7 @@ def extract_tables(sql):
             
  """ below code is to handle string like 'select * from a , b ; """
  
-        if l[i] == ',' and i>2 and i<length and l[i-2] == 'from' and l[i+1] != 'select':
+        if l[i] == ',' and i>2 and i<length-1 and l[i-2] == 'from' and l[i+1] != 'select':
             output.append(l[i+1])            
 
     return output
