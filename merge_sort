@@ -1,0 +1,44 @@
+-----------------time complexity for merge sort is O(nlogn)-----------------------
+
+def merge_sort(a):
+    if len(a)==1:
+        return a
+    n=len(a)
+    Left=a[:n//2]
+    Right=a[n//2:]
+   
+    Left=merge_sort(Left)
+    Right=merge_sort(Right)
+    i=0
+    j=0
+    k=0
+    
+    t=['None']*n
+
+    while i<len(Left) and j <len(Right):
+        if Left[i]<Right[j]:
+            t[k]=Left[i]
+            i=i+1
+            k=k+1
+            
+        else:
+            t[k]=Right[j]
+            j=j+1
+            k=k+1
+    while i<len(Left):
+        t[k]=Left[i]
+        i+=1
+        k=k+1
+    
+    while j<len(Right):
+        t[k]=Right[j]
+        j+=1
+        k+=1
+    return t  
+
+def main():
+    a=[38,27,48,3,9,82,10]
+    print(merge_sort(a))
+
+if '__name__'=='__main__':
+    main()
