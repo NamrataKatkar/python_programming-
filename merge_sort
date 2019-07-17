@@ -4,11 +4,11 @@ def merge_sort(a):
     if len(a)==1:
         return a
     n=len(a)
-    Left=a[:n//2]
-    Right=a[n//2:]
+    arr1=a[:n//2]
+    arr2=a[n//2:]
    
-    Left=merge_sort(Left)
-    Right=merge_sort(Right)
+    Left=merge_sort(arr1)
+    Right=merge_sort(arr2)
     i=0
     j=0
     k=0
