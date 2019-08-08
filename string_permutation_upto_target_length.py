@@ -26,17 +26,19 @@ d
 
 Solution:
 */
-def fun(set,prefix,k,n):
+def fun(set,prefix,k,n,l):
 	if k==0:
-		print(prefix)
-		return
+		#print(prefix)
+		l.append(prefix)
+		return l
 	else:
 		for i in set:
 			newprefix=prefix+i
-			fun(set,newprefix,k-1,n)
+			fun(set,newprefix,k-1,n,l)
 
 if __name__=='__main__':
 	set=['a','b']
 	k=3
 	n=len(set)
-	fun(set,'',k,n)
+	l=[]
+	fun(set,'',k,n,l)
